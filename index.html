@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Jhon Mendoza</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="img/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Portfolio - Jhon Mendoza</title>
 </head>
 <body>
 <!-- Navegación -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #1c1c1c !important;">
+<nav class="navbar navbar-expand-lg" style="background-color: #1c1c1c !important;">
     <a class="navbar-brand" href="#">
         <img src="img/Logo.png" alt="Logo" style="width: 50px;">
     </a>
@@ -42,17 +42,19 @@
 
 <!-- Sección Home -->
 <section id="home">
-    <h1>Hi, I am <span>Jhon Mendoza</span></h1>
-    <p>I am a versatile software developer with expertise in both frontend and backend technologies. My focus is on creating clean, efficient code and engaging user experiences. I specialize in building interactive websites and applications that are both functional and aesthetically pleasing.</p>
-    <ul class="links">
-        <li><a href="https://www.linkedin.com/in/jhomt/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="https://wa.me/51937381566" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-        <li><a href="https://github.com/JHOMT" target="_blank"><i class="fab fa-github"></i></a></li>
-    </ul>
+    <div class="home-content fade-in">
+        <h1>Hi, I am <span class="dynamic-text">Jhon Mendoza Tiquillahuanca</span></h1>
+        <p>I am a versatile software developer with expertise in both frontend and backend technologies. My focus is on creating clean, efficient code and engaging user experiences. I specialize in building interactive websites and applications that are both functional and aesthetically pleasing.</p>
+        <ul class="links">
+            <li><a href="https://www.linkedin.com/in/jhomt/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://wa.me/51937381566" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+            <li><a href="https://github.com/JHOMT" target="_blank"><i class="fab fa-github"></i></a></li>
+        </ul>
+    </div>
 </section>
 
 <!-- Sección About -->
-<section id="about">
+<section id="about" class="sect">
     <div class="about-background-text">ABOUT ME</div>
     <h2>ABOUT ME</h2>
     <div class="about-container">
@@ -73,7 +75,7 @@
 </section>
 
 <!-- Sección What I Do -->
-<section id="services">
+<section id="services" class="sect">
     <div class="about-background-text">WHAT I DO</div>
     <h2>WHAT I DO</h2>
     <div class="service-container">
@@ -96,7 +98,7 @@
 </section>
 
 <!-- Sección Projects -->
-<section id="projects">
+<section id="projects" class="sect">
     <div class="about-background-text">PROJECTS</div>
     <h2>PROJECTS</h2>
     <div class="projects-container">
@@ -144,7 +146,7 @@
 </section>
 
 <!-- Sección Skills -->
-<section id="skills">
+<section id="skills" class="sect">
     <div class="about-background-text">SKILLS</div>
     <h2>SKILLS</h2>
     <div class="skills-container">
@@ -194,5 +196,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

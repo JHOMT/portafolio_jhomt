@@ -21,3 +21,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const homeContent = document.querySelector('.home-content');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                homeContent.classList.add('active');
+                observer.disconnect();
+            }
+        });
+    });
+
+    observer.observe(document.querySelector('#home'));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const aboutContainer = document.querySelector('.about-container');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                aboutContainer.classList.add('active');
+                observer.disconnect();
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    observer.observe(document.querySelector('#about'));
+});
