@@ -1,0 +1,435 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    background-color: #1c1c1c !important;
+    padding: 20px 50px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 9px 8px rgba(0, 0, 0, 0.4);
+}
+
+nav .logo img {
+    width: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: #ffd700 !important;
+}
+
+.about-background-text {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+    white-space: nowrap;
+}
+
+/* Sección Home */
+#home {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url('https://s1.1zoom.me/big0/624/Scenery_Sky_Grasslands_455864.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    filter: brightness(50%);
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(26, 26, 26, 0.3), rgba(0, 0, 0, 0));
+    z-index: 1;
+}
+
+#home h1, #home p, #home .links {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+#home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#home h1 span {
+    color: #ffd700;
+}
+
+#home p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.links li {
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.links li a{
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    font-size: 24px;
+    transition: background-color 0.3s ease;
+}
+
+.links li a:hover {
+    background-color: #031633;
+    scale: clamp(1.1, 1.1, 1.1);
+    border-radius: 50%;
+}
+
+/* Sección About */
+#about {
+    padding: 100px 20px;
+    background-color: rgba(26, 26, 26, 0.9); /* Fondo oscuro semi-transparente */
+    text-align: center;
+    border-radius: 80px 80px 0 0;
+    box-shadow: 0 9px 8px rgba(0, 0, 0, 0.4);
+    margin-top: -80px; /* Ajuste para solapar con el contenedor anterior */
+    backdrop-filter: blur(100px); /* Añade un efecto de desenfoque para integrarlo mejor con el fondo */
+}
+
+#about h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: -25px;
+    color: #ffd700;
+    margin-bottom: 50px;
+}
+
+.about-container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.profile-picture img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    background-color: #031633;
+    border-radius: 35px 35px 0 0;
+    border: 1px solid #031640;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.details {
+    color: #cfcfcf;
+    text-align: justify;
+}
+
+.details p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.details .highlight {
+    color: #ffd700;
+}
+
+.details .btn-cv{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+/* Sección Services */
+#services {
+    padding: 100px 20px;
+    background-color: #121212;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#services h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: -25px;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+}
+
+.service-box {
+    background-color: #1c1c1c;
+    padding: 30px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+}
+
+.service-box i {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.service-box h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffd700;
+}
+
+.service-box p {
+    font-size: 16px;
+    color: #cfcfcf;
+}
+
+/* Sección Projects */
+#projects {
+    padding: 100px 20px;
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#projects h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: -25px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+    justify-content: center;
+}
+
+.project-box {
+    background-color: #121212;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.project-box .btn-link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: .5rem;
+    color: white;
+    border-bottom: 1px solid #ffd700;
+}
+
+.project-box .btn-link:hover {
+    color: #6c757d;
+}
+
+.project-box:hover {
+    transform: translateY(-10px);
+}
+
+.project-box i {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.project-box h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffd700;
+}
+
+.project-box p {
+    font-size: 16px;
+    color: #cfcfcf;
+    margin-bottom: 20px;
+}
+
+.project-box a.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #ffd700;
+    background-color: #ffd700;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.project-box a.btn-primary:hover {
+    background-color: #e5b700;
+}
+
+.more-projects {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.more-projects a.btn-secondary {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.more-projects a.btn-secondary:hover {
+    background-color: #555;
+}
+
+@media (min-width: 768px) {
+    .projects-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .project-box {
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-box {
+        padding: 15px;
+    }
+}
+
+/* Sección Skills */
+#skills {
+    padding: 100px 20px;
+    background-color: #121212;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#skills h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: -25px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill .icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.progress {
+    height: 5px !important;
+    background-color: #ffd700 !important;
+}
+
+#skills .progress {
+    transition: width 1s ease-in-out !important;
+}
+
+@media (min-width: 768px) {
+    .about-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .service-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .service-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
