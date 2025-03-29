@@ -1,4 +1,4 @@
-/* Variables CSS */
+/* ############################# GLOBAL STYLES ############################# */
 :root {
     --primary-color: #FFB600;
     --secondary-color: #1c1c1c;
@@ -7,7 +7,6 @@
     --white-color: #fff;
 }
 
-/* Reset de márgenes y paddings */
 * {
     margin: 0;
     padding: 0;
@@ -19,14 +18,87 @@ a{
     text-decoration: none;
 }
 
-/* Estilo del cuerpo */
+/* ############################# TITLES CONTAINER STYLES ############################# */
+.title-sections {
+    text-align: center;
+    color: var(--primary-color);
+    font-family: 'Fira Code', monospace;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.title-sections h2 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 0;
+    animation: glow-text 3s ease-in-out infinite;
+}
+
+/* ############################# SCROLL TOP STYLES ############################# */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-size: 32px;
+    border: none;
+    padding: 18px;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+    display: none;
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #1f1f1f;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top i {
+    font-size: 40px;
+}
+
+.scroll-to-top.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-to-top.visible {
+    transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        padding: 20px;
+    }
+
+    .scroll-to-top i {
+        font-size: 25px;
+    }
+}
+
+
+/* ############################# GLOBAL STYLES ############################# */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: transparent;
     color: #1a1a1a;
 }
 
-/* Navegación */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -79,7 +151,6 @@ body {
 }
 
 /* ############################# SECTION HOME ############################# */
-
 #home {
     display: flex;
     flex-wrap: wrap;
@@ -427,9 +498,9 @@ body {
     font-weight: bold;
 }
 
-.profile-info a.btn-cv {
+.btn-cv {
     display: inline-block;
-    margin-top: 20px;
+    margin: 20px 0;
     padding: 12px 28px;
     background-color: var(--primary-color);
     color: #121212;
@@ -526,10 +597,10 @@ body {
 }
 
 .service-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid para disposición flexible */
+    justify-items: center;
     gap: 50px;
-    flex-wrap: wrap;
     padding-top: 30px;
     position: relative;
     z-index: 2;
@@ -539,13 +610,13 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 35px;
     border-radius: 25px;
-    width: 30%;
+    width: 100%;
+    max-width: 300px;
     height: auto;
     text-align: center;
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
     transition: all 0.4s ease-in-out;
     position: relative;
-    z-index: 2;
 }
 
 .service-box:hover {
@@ -575,45 +646,78 @@ body {
 }
 
 .service-icon {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     margin-bottom: 20px;
     display: inline-block;
     background-color: var(--primary-color);
     border-radius: 50%;
-    padding: 15px;
+    padding: 18px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: absolute;
-    top: -35px;
+    top: -40px;
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 3;
 }
 
 .service-box:hover .service-icon {
-    transform: scale(1.2) translateX(-50%) translateY(-5px);
+    transform: scale(1.2) translateX(-50%) translateY(-10px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
 }
 
 .service-icon i {
-    font-size: 40px;
+    font-size: 42px;
     color: var(--white-color);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     #services h2 {
         font-size: 2.5rem;
     }
 
     .service-container {
-        flex-direction: column;
-        gap: 30px;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
     .service-box {
         width: 80%;
+        margin-top: 20px;
     }
 }
+
+@media (max-width: 768px) {
+    #services h2 {
+        font-size: 2rem;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .service-box {
+        width: 100%;
+        padding: 25px;
+        margin-top: 20px;
+    }
+
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        padding: 12px;
+    }
+
+    .service-icon i {
+        font-size: 35px;
+    }
+
+    .service-box p {
+        font-size: 14px; /* Reducir tamaño de texto en móviles */
+    }
+}
+
 
 /* ############################# SECTION PROJECTS ############################# */
 #projects {
@@ -811,6 +915,7 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
 .tab-btn {
@@ -902,6 +1007,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .skill:hover {
@@ -953,32 +1059,241 @@ body {
     color: var(--white-color);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+    .tabs {
+        flex-direction: column;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
     .skill {
         width: 120px;
         height: 150px;
+        span{
+            font-size: 10px;
+        }
     }
 
     .progress-bar {
         width: 100%;
     }
+
+    .tab-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
 }
 
-.title-sections {
+@media screen and (max-width: 768px) {
+    .skill {
+        width: 100px;
+        height: 130px;
+        padding: 15px;
+    }
+
+    .progress-bar {
+        width: 80%;
+    }
+
+    .progress {
+        max-width: 300px;
+    }
+
+    .skill .icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tab-btns {
+        flex-direction: column;
+    }
+
+    .tab-btn-languages {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* ############################# SECTION FOOTER ############################# */
+#footer {
+    background-color: #1c1c1c;
+    color: var(--white-color);
+    padding: 60px 20px;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* Asegura que las formas no sobresalgan */
+    z-index: 10;
+}
+
+.footer-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 25%, transparent 50%);
+    z-index: -1;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
     text-align: center;
+    width: 30%;
+}
+
+.footer-logo img {
+    width: 80px;
+}
+
+.footer-logo p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+.footer-links h3, .footer-contact h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
     color: var(--primary-color);
-    font-family: 'Fira Code', monospace;
-    font-size: 1.5rem;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
     margin-bottom: 10px;
 }
 
-.title-sections h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin: 10px 0;
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 5px;
+.footer-links ul li a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 1rem;
     position: relative;
-    animation: glow-text 3s ease-in-out infinite;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.footer-links ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.footer-contact p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.footer-contact .email-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-contact .email-link:hover {
+    color: #e5b700;
+}
+
+.footer-contact .social-links a {
+    margin: 0 15px;
+    font-size: 2rem;
+    color: var(--white-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-contact .social-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    background-color: #e5b700;
+    padding: 20px;
+    color: var(--background-color);
+    font-size: 0.9rem;
+    border-top: 2px solid var(--background-color);
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo, .footer-links, .footer-contact {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-logo img {
+        width: 90px;
+    }
+
+    .footer-links ul li {
+        font-size: 1.2rem;
+    }
+
+    .footer-contact .social-links a {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-logo, .footer-links, .footer-contact {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-logo img {
+        width: 60px;
+    }
+
+    .footer-links ul li {
+        font-size: 1.1rem;
+    }
+
+    .footer-contact .social-links a {
+        font-size: 2rem;
+    }
 }
